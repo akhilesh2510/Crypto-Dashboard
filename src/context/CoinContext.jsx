@@ -2,6 +2,8 @@ import { createContext } from "react";
 import { useState, useEffect } from "react";
 export const CoinContext = createContext();
 
+const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY;
+
 const CoinContextProvider = (props) => {
   const [allCoin, setAllCoin] = useState([]);
   const [currency, setCurrency] = useState({
@@ -14,7 +16,7 @@ const CoinContextProvider = (props) => {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-cqPBP43crJvcz31zoUYRnSyC",
+        "x-cg-demo-api-key": API_KEY,
       },
     };
 
